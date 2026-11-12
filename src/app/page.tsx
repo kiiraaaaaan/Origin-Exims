@@ -30,8 +30,7 @@ export default function HomePage() {
         <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/images/hero-farming.jpg)', backgroundSize: 'cover', backgroundPosition: 'center 60%' }} />
         <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to right, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.72) 45%, rgba(0,0,0,0.25) 100%)' }} />
         <Container style={{ position: 'relative', zIndex: 10, width: '100%' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.75rem' }}>
-            <span style={{ display: 'block', width: '2rem', height: '2px', background: 'var(--color-bronze)', flexShrink: 0 }} />
+          <div style={{ marginBottom: '1.75rem' }}>
             <span style={{ color: 'var(--color-bronze)', fontSize: '0.75rem', fontFamily: 'var(--font-inter), sans-serif', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase' as const }}>
               Origin Exims
             </span>
