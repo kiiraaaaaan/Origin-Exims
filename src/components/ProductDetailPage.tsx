@@ -75,11 +75,11 @@ export default function ProductDetailPage({
             </div>
           )}
           <h1 style={{
-            fontFamily: 'var(--font-serif-title), Georgia, serif',
+            fontFamily: 'var(--font-inter), sans-serif',
             fontSize: 'clamp(2rem, 5vw, 4rem)',
-            fontWeight: 500,
+            fontWeight: 800,
             color: '#fff',
-            letterSpacing: '-0.025em',
+            letterSpacing: '-0.03em',
             lineHeight: 1.05,
             margin: 0,
           }}>
@@ -185,11 +185,11 @@ export default function ProductDetailPage({
           borderTop: '1px solid rgba(0,0,0,0.08)',
         }}>
           <h2 style={{
-            fontFamily: 'var(--font-serif-title), Georgia, serif',
+            fontFamily: 'var(--font-inter), sans-serif',
             fontSize: 'clamp(1.5rem, 3vw, 2.25rem)',
-            fontWeight: 500,
+            fontWeight: 800,
             color: '#1d1d1f',
-            letterSpacing: '-0.02em',
+            letterSpacing: '-0.03em',
             margin: 0,
           }}>
             Interested in {product.name}?

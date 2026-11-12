@@ -27,12 +27,12 @@ export default function ProductsPage() {
             </span>
             <h1
               style={{
-                fontFamily: 'var(--font-serif-title), "Playfair Display", Georgia, serif',
+                fontFamily: 'var(--font-inter), sans-serif',
                 fontSize: 'clamp(2.25rem, 5vw, 3.75rem)',
-                fontWeight: 500,
+                fontWeight: 800,
                 color: 'var(--color-graphite)',
-                letterSpacing: '-0.02em',
-                lineHeight: 1.1,
+                letterSpacing: '-0.03em',
+                lineHeight: 1.08,
                 margin: '0.5rem 0 1rem',
               }}
             >
