@@ -353,35 +353,14 @@ button {
 }
 
 /* ── Hero bronze glow pulse — "Coir & Agro" highlight ─────────── */
-@keyframes metallicSweep {
-  0%   { background-position: 220% center; }
-  100% { background-position: -220% center; }
-}
-
 .hero-bronze-glow {
-  background: linear-gradient(
-    105deg,
-    #3d2810 0%,
-    #654527 10%,
-    #8d6d4f 22%,
-    #a07d5a 32%,
-    #b28f6d 42%,
-    #c8a882 50%,
-    #b28f6d 58%,
-    #a07d5a 66%,
-    #8d6d4f 76%,
-    #654527 88%,
-    #3d2810 100%
-  );
-  background-size: 300% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  /* Constant warm glow — always on */
-  filter: drop-shadow(0 0 22px rgba(178, 143, 109, 0.55))
-          drop-shadow(0 2px 8px rgba(0, 0, 0, 0.38));
-  animation: metallicSweep 5.5s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+  /* Logo-matched antique gold — #b28f6d (sampled highlight tone) */
+  color: #b28f6d;
+  /* Layered warm glow: tight inner halo + soft mid + wide ambient */
+  text-shadow:
+    0 0  8px rgba(178, 143, 109, 0.90),
+    0 0 24px rgba(178, 143, 109, 0.55),
+    0 0 55px rgba(160, 125, 90, 0.28);
   display: inline;
 }
 
