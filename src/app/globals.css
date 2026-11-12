@@ -354,13 +354,11 @@ button {
 
 /* ── Hero bronze glow pulse — "Coir & Agro" highlight ─────────── */
 .hero-bronze-glow {
-  /* Logo-matched antique gold — #b28f6d (sampled highlight tone) */
   color: #b28f6d;
-  /* Layered warm glow: tight inner halo + soft mid + wide ambient */
+  /* Subtle premium glow — just a whisper of warmth, not a flood */
   text-shadow:
-    0 0  8px rgba(178, 143, 109, 0.90),
-    0 0 24px rgba(178, 143, 109, 0.55),
-    0 0 55px rgba(160, 125, 90, 0.28);
+    0 0  6px rgba(178, 143, 109, 0.35),
+    0 0 18px rgba(178, 143, 109, 0.14);
   display: inline;
 }
 
