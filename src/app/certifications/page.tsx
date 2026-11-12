@@ -61,16 +61,16 @@ function RegLogo({ src, alt }: { src: string; alt: string }) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        marginRight: '100px',
+        marginRight: '70px',
       }}
     >
       <img
         src={src}
         alt={alt}
         style={{
-          height: '65px',
+          height: '110px',
           width: 'auto',
-          maxWidth: '170px',
+          maxWidth: '260px',
           objectFit: 'contain',
           display: 'block',
         }}
@@ -88,16 +88,16 @@ function DocIcon({ src, alt }: { src: string; alt: string }) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        marginRight: '80px',
+        marginRight: '70px',
       }}
     >
       <img
         src={src}
         alt={alt}
         style={{
-          height: '82px',
+          height: '110px',
           width: 'auto',
-          maxWidth: '130px',
+          maxWidth: '185px',
           objectFit: 'contain',
           display: 'block',
         }}
@@ -160,8 +160,13 @@ export default function CertificationsPage() {
         <div
           style={{
             overflow: 'hidden',
-            width: '100%',
-            height: '180px',
+            width: '100vw',
+            position: 'relative',
+            left: '50%',
+            right: '50%',
+            marginLeft: '-50vw',
+            marginRight: '-50vw',
+            height: '200px',
             display: 'flex',
             alignItems: 'center',
             marginBottom: 'clamp(3rem, 6vw, 5rem)',
@@ -185,8 +190,13 @@ export default function CertificationsPage() {
         <div
           style={{
             overflow: 'hidden',
-            width: '100%',
-            height: '180px',
+            width: '100vw',
+            position: 'relative',
+            left: '50%',
+            right: '50%',
+            marginLeft: '-50vw',
+            marginRight: '-50vw',
+            height: '200px',
             display: 'flex',
             alignItems: 'center',
           }}
