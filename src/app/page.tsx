@@ -92,15 +92,11 @@ export default function HomePage() {
       <section id="certifications" style={{ scrollMarginTop: 'var(--nav-height)', background: '#ffffff' }}>
         <div style={{ paddingTop: 'clamp(4rem, 8vw, 6rem)', paddingBottom: 'clamp(4rem, 8vw, 6rem)' }}>
           {/* Header */}
-          <div style={{ width: '90%', maxWidth: '1400px', marginLeft: 'auto', marginRight: 'auto', marginBottom: 'clamp(2rem, 4vw, 3rem)' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.9rem' }}>
-              <span style={{ display: 'block', width: '1.75rem', height: '1.5px', background: 'var(--color-bronze)' }} />
-              <span style={{ fontSize: '0.7rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: 'var(--color-bronze)' }}>Certifications</span>
-            </div>
+          <Container style={{ marginBottom: 'clamp(2rem, 4vw, 3rem)' }}>
             <h2 style={{ fontFamily: 'var(--font-inter), sans-serif', fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', fontWeight: 800, color: 'var(--color-graphite)', letterSpacing: '-0.03em', lineHeight: 1.08, margin: 0 }}>
               Certifications &amp; Compliance
             </h2>
-          </div>
+          </Container>
           {/* Live marquees — same component as /certifications */}
           <CertMarquees />
         </div>
