@@ -3,61 +3,32 @@
 import React from 'react';
 import Section from '@/components/Section';
 
-/* ─── Registration logos — with sub-labels matching reference ─────────────── */
+/* ─── Assets — using the clean transparent PNGs from the latest zip ───────── */
 const REGISTRATION_LOGOS = [
-  {
-    src: '/images/certs/DGFT_IEC.png',
-    alt: 'DGFT IEC',
-    label: 'DGFT\n(IEC)',
-  },
-  {
-    src: '/images/certs/GST.png',
-    alt: 'GST',
-    label: 'Goods and\nServices Tax',
-  },
-  {
-    src: '/images/certs/FSSAI.png',
-    alt: 'FSSAI',
-    label: 'Food Safety &\nStandards Authority',
-  },
-  {
-    src: '/images/certs/apeda.png',
-    alt: 'APEDA',
-    label: 'APEDA',
-  },
-  {
-    src: '/images/certs/Coir_Board.png',
-    alt: 'Coir Board',
-    label: 'COIR BOARD\nMinistry of MSME, Govt. of India',
-  },
-  {
-    src: '/images/certs/Spices_Board_India.png',
-    alt: 'Spices Board India',
-    label: 'SPICES BOARD\nINDIA',
-  },
-  {
-    src: '/images/certs/MSME.png',
-    alt: 'MSME',
-    label: 'Ministry of Micro,\nSmall & Medium Enterprises',
-  },
+  { src: '/images/certs/DGFT_IEC.png',        alt: 'DGFT IEC' },
+  { src: '/images/certs/GST.png',              alt: 'GST' },
+  { src: '/images/certs/fssai.png',            alt: 'FSSAI' },
+  { src: '/images/certs/apeda.png',            alt: 'APEDA' },
+  { src: '/images/certs/Coir_Board.png',       alt: 'Coir Board' },
+  { src: '/images/certs/Spices_Board_India.png', alt: 'Spices Board India' },
+  { src: '/images/certs/MSME.png',             alt: 'MSME' },
 ];
 
-/* ─── Documentation icons ─────────────────────────────────────────────────── */
 const DOC_ICONS = [
-  { src: '/images/certs/Certificate_of_Origin.png',    alt: 'Certificate of Origin',    label: 'Certificate\nof Origin' },
-  { src: '/images/certs/Commercial_Invoice.png',       alt: 'Commercial Invoice',        label: 'Commercial\nInvoice' },
-  { src: '/images/certs/Packing_List.png',             alt: 'Packing List',              label: 'Packing\nList' },
-  { src: '/images/certs/Bill_of_Lading.png',           alt: 'Bill of Lading',            label: 'Bill of\nLading' },
-  { src: '/images/certs/Shipping_Bill.png',            alt: 'Shipping Bill',             label: 'Shipping\nBill' },
-  { src: '/images/certs/Phytosanitary_Certificate.png',alt: 'Phytosanitary Certificate', label: 'Phytosanitary\nCertificate' },
-  { src: '/images/certs/Fumigation_Certificate.png',   alt: 'Fumigation Certificate',    label: 'Fumigation\nCertificate' },
-  { src: '/images/certs/Certificate_of_Analysis.png',  alt: 'Certificate of Analysis',   label: 'Certificate\nof Analysis' },
-  { src: '/images/certs/Inspection_Certificate.png',   alt: 'Inspection Certificate',    label: 'Inspection\nCertificate' },
+  { src: '/images/certs/Certificate_of_Origin.png',    alt: 'Certificate of Origin' },
+  { src: '/images/certs/Commercial_Invoice.png',       alt: 'Commercial Invoice' },
+  { src: '/images/certs/Packing_List.png',             alt: 'Packing List' },
+  { src: '/images/certs/Bill_of_Lading.png',           alt: 'Bill of Lading' },
+  { src: '/images/certs/Shipping_Bill.png',            alt: 'Shipping Bill' },
+  { src: '/images/certs/Phytosanitary_Certificate.png',alt: 'Phytosanitary Certificate' },
+  { src: '/images/certs/Fumigation_Certificate.png',   alt: 'Fumigation Certificate' },
+  { src: '/images/certs/Certificate_of_Analysis.png',  alt: 'Certificate of Analysis' },
+  { src: '/images/certs/Inspection_Certificate.png',   alt: 'Inspection Certificate' },
 ];
 
-/* ─── CSS ─────────────────────────────────────────────────────────────────── */
+/* ─── Keyframes ───────────────────────────────────────────────────────────── */
 const MARQUEE_CSS = `
-@keyframes marquee-scroll {
+@keyframes mq-scroll {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
@@ -65,32 +36,69 @@ const MARQUEE_CSS = `
   display: flex;
   align-items: center;
   width: max-content;
-  animation: marquee-scroll 30s linear infinite;
+  animation: mq-scroll 32s linear infinite;
 }
 .mq-reg:hover { animation-play-state: paused; }
-
 .mq-doc {
   display: flex;
   align-items: center;
   width: max-content;
-  animation: marquee-scroll 36s linear infinite;
+  animation: mq-scroll 38s linear infinite;
 }
 .mq-doc:hover { animation-play-state: paused; }
 `;
 
-/* ─── Single registration item ───────────────────────────────────────────── */
-function RegItem({ src, alt, label }: { src: string; alt: string; label: string }) {
+/* ─── Card for registration logos ────────────────────────────────────────── */
+function RegCard({ src, alt }: { src: string; alt: string }) {
   return (
     <div
       style={{
         flexShrink: 0,
+        width: '240px',
+        height: '160px',
+        marginRight: '20px',
+        background: '#ffffff',
+        border: '1px solid rgba(0,0,0,0.07)',
+        borderRadius: '16px',
+        boxShadow: '0 2px 16px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04)',
         display: 'flex',
-        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: '0.75rem',
-        width: '220px',
-        marginRight: '60px',
+        padding: '1.5rem',
+      }}
+    >
+      <img
+        src={src}
+        alt={alt}
+        style={{
+          height: '110px',
+          width: 'auto',
+          maxWidth: '200px',
+          objectFit: 'contain',
+          display: 'block',
+        }}
+      />
+    </div>
+  );
+}
+
+/* ─── Card for doc icons ─────────────────────────────────────────────────── */
+function DocCard({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div
+      style={{
+        flexShrink: 0,
+        width: '200px',
+        height: '160px',
+        marginRight: '20px',
+        background: '#ffffff',
+        border: '1px solid rgba(0,0,0,0.07)',
+        borderRadius: '16px',
+        boxShadow: '0 2px 16px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '1.5rem',
       }}
     >
       <img
@@ -99,67 +107,43 @@ function RegItem({ src, alt, label }: { src: string; alt: string; label: string 
         style={{
           height: '100px',
           width: 'auto',
-          maxWidth: '210px',
-          objectFit: 'contain',
-          display: 'block',
-        }}
-      />
-      <span
-        style={{
-          fontSize: '0.72rem',
-          fontWeight: 500,
-          color: 'rgba(30,30,30,0.55)',
-          textAlign: 'center',
-          lineHeight: 1.4,
-          whiteSpace: 'pre-line',
-          letterSpacing: '0.01em',
-        }}
-      >
-        {label}
-      </span>
-    </div>
-  );
-}
-
-/* ─── Single doc item ─────────────────────────────────────────────────────── */
-function DocItem({ src, alt, label }: { src: string; alt: string; label: string }) {
-  return (
-    <div
-      style={{
-        flexShrink: 0,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: '0.75rem',
-        width: '180px',
-        marginRight: '60px',
-      }}
-    >
-      <img
-        src={src}
-        alt={alt}
-        style={{
-          height: '90px',
-          width: 'auto',
           maxWidth: '170px',
           objectFit: 'contain',
           display: 'block',
         }}
       />
+    </div>
+  );
+}
+
+/* ─── Section divider label ──────────────────────────────────────────────── */
+function SectionLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <div
+      style={{
+        width: '90%',
+        maxWidth: '1400px',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        marginBottom: '1.5rem',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '1rem',
+      }}
+    >
       <span
         style={{
           fontSize: '0.72rem',
-          fontWeight: 500,
-          color: 'rgba(30,30,30,0.55)',
-          textAlign: 'center',
-          lineHeight: 1.4,
-          whiteSpace: 'pre-line',
-          letterSpacing: '0.01em',
+          fontWeight: 800,
+          letterSpacing: '0.16em',
+          textTransform: 'uppercase' as const,
+          color: 'var(--color-graphite)',
+          whiteSpace: 'nowrap',
         }}
       >
-        {label}
+        {children}
       </span>
+      <div style={{ flex: 1, height: '1px', background: 'rgba(0,0,0,0.10)' }} />
     </div>
   );
 }
@@ -212,24 +196,8 @@ export default function CertificationsPage() {
           </p>
         </div>
 
-        {/* ── Section label: Business & Export Registrations ── */}
-        <div
-          style={{
-            width: '90%',
-            maxWidth: '1400px',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            marginBottom: '1.25rem',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '1rem',
-          }}
-        >
-          <span style={{ fontSize: '0.72rem', fontWeight: 800, letterSpacing: '0.16em', textTransform: 'uppercase' as const, color: 'var(--color-graphite)', whiteSpace: 'nowrap' }}>
-            Business &amp; Export Registrations
-          </span>
-          <div style={{ flex: 1, height: '1px', background: 'rgba(0,0,0,0.10)' }} />
-        </div>
+        {/* ── Label 1 ── */}
+        <SectionLabel>Business &amp; Export Registrations</SectionLabel>
 
         {/* ═══ MARQUEE 1 — Registration Logos ═══ */}
         <div
@@ -239,35 +207,21 @@ export default function CertificationsPage() {
             position: 'relative',
             left: '50%',
             marginLeft: '-50vw',
-            paddingTop: '1rem',
-            paddingBottom: '1rem',
-            marginBottom: 'clamp(3rem, 6vw, 5rem)',
+            paddingTop: '0.5rem',
+            paddingBottom: '0.5rem',
+            marginBottom: 'clamp(3rem, 5vw, 4.5rem)',
           }}
         >
           <div className="mq-reg">
-            {REGISTRATION_LOGOS.map((l) => <RegItem key={`a-${l.alt}`} {...l} />)}
-            {REGISTRATION_LOGOS.map((l) => <RegItem key={`b-${l.alt}`} {...l} />)}
+            {/* padding-left so first card isn't flush against edge */}
+            <div style={{ flexShrink: 0, width: '3vw' }} />
+            {REGISTRATION_LOGOS.map((l) => <RegCard key={`a-${l.alt}`} {...l} />)}
+            {REGISTRATION_LOGOS.map((l) => <RegCard key={`b-${l.alt}`} {...l} />)}
           </div>
         </div>
 
-        {/* ── Section label: Export Documentation ── */}
-        <div
-          style={{
-            width: '90%',
-            maxWidth: '1400px',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            marginBottom: '1.25rem',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '1rem',
-          }}
-        >
-          <span style={{ fontSize: '0.72rem', fontWeight: 800, letterSpacing: '0.16em', textTransform: 'uppercase' as const, color: 'var(--color-graphite)', whiteSpace: 'nowrap' }}>
-            Export Documentation
-          </span>
-          <div style={{ flex: 1, height: '1px', background: 'rgba(0,0,0,0.10)' }} />
-        </div>
+        {/* ── Label 2 ── */}
+        <SectionLabel>Export Documentation</SectionLabel>
 
         {/* ═══ MARQUEE 2 — Documentation Icons ═══ */}
         <div
@@ -277,13 +231,14 @@ export default function CertificationsPage() {
             position: 'relative',
             left: '50%',
             marginLeft: '-50vw',
-            paddingTop: '1rem',
-            paddingBottom: '1rem',
+            paddingTop: '0.5rem',
+            paddingBottom: '0.5rem',
           }}
         >
           <div className="mq-doc">
-            {DOC_ICONS.map((d) => <DocItem key={`a-${d.alt}`} {...d} />)}
-            {DOC_ICONS.map((d) => <DocItem key={`b-${d.alt}`} {...d} />)}
+            <div style={{ flexShrink: 0, width: '3vw' }} />
+            {DOC_ICONS.map((d) => <DocCard key={`a-${d.alt}`} {...d} />)}
+            {DOC_ICONS.map((d) => <DocCard key={`b-${d.alt}`} {...d} />)}
           </div>
         </div>
 
