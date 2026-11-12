@@ -94,14 +94,8 @@ export default function HomePage() {
             <br />
             Exporters of Premium
             <br />
-            <span
-              style={{
-                color: 'var(--color-bronze)',
-                textShadow: '0 0 32px rgba(180,130,60,0.55), 0 0 8px rgba(180,130,60,0.30)',
-              }}
-            >
-              Coir &amp; Agro Commodities.
-            </span>
+            <span className="hero-bronze-glow">Coir &amp; Agro</span>
+            <span style={{ color: '#ffffff' }}> Commodities.</span>
           </h1>
 
           {/* Supporting copy */}

@@ -352,6 +352,27 @@ button {
   100% { background-position: 100% 50%; }
 }
 
+/* ── Hero bronze glow pulse — "Coir & Agro" highlight ─────────── */
+@keyframes bronzeGlowPulse {
+  0%, 100% {
+    text-shadow:
+      0 0 18px rgba(196, 154, 92, 0.45),
+      0 0  6px rgba(196, 154, 92, 0.25);
+  }
+  50% {
+    text-shadow:
+      0 0 48px rgba(196, 154, 92, 0.85),
+      0 0 20px rgba(196, 154, 92, 0.55),
+      0 0 72px rgba(196, 154, 92, 0.30);
+  }
+}
+
+.hero-bronze-glow {
+  color: #C49A5C;
+  animation: bronzeGlowPulse 3s ease-in-out infinite;
+  display: inline;
+}
+
 /* ── Hero CTA buttons — base shared styles ───────────────────── */
 .hero-cta-btn {
   display: inline-flex;
