@@ -14,11 +14,13 @@ function CertCard({
   alt,
   label,
   imgHeight = 72,
+  cardHeight = 110,
 }: {
   src: string;
   alt: string;
   label?: string;
   imgHeight?: number;
+  cardHeight?: number;
 }) {
   return (
     <div
@@ -31,11 +33,11 @@ function CertCard({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: '0.6rem',
-        padding: '1.5rem 1.25rem',
-        minHeight: '120px',
+        gap: '0.65rem',
+        padding: '1.25rem 1rem',
+        minHeight: `${cardHeight}px`,
         flex: 1,
-        minWidth: '140px',
+        minWidth: 0,
       }}
     >
       <img
@@ -52,10 +54,12 @@ function CertCard({
       {label && (
         <span
           style={{
-            fontSize: '0.72rem',
-            color: 'rgba(0,0,0,0.42)',
+            fontSize: '0.78rem',
+            fontWeight: 500,
+            color: 'var(--color-graphite)',
             textAlign: 'center',
             lineHeight: 1.4,
+            whiteSpace: 'pre-line',
           }}
         >
           {label}
@@ -73,14 +77,14 @@ function CertSectionLabel({ children }: { children: React.ReactNode }) {
         display: 'flex',
         alignItems: 'center',
         gap: '1rem',
-        marginBottom: '1.25rem',
+        marginBottom: '1rem',
       }}
     >
       <span
         style={{
           fontSize: '0.7rem',
           fontWeight: 700,
-          letterSpacing: '0.12em',
+          letterSpacing: '0.13em',
           textTransform: 'uppercase',
           color: 'var(--color-graphite)',
           whiteSpace: 'nowrap',
@@ -106,7 +110,7 @@ export default function CertificationsPage() {
       <Container>
 
         {/* ── Page header ── */}
-        <div style={{ marginBottom: 'clamp(3rem, 6vw, 5rem)', maxWidth: '660px' }}>
+        <div style={{ marginBottom: 'clamp(2.5rem, 5vw, 4rem)', maxWidth: '660px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1rem' }}>
             <span
               style={{
@@ -155,37 +159,67 @@ export default function CertificationsPage() {
           </p>
         </div>
 
-        {/* ── Section 1: Export Registrations ── */}
-        <div style={{ marginBottom: 'clamp(2.5rem, 5vw, 4rem)' }}>
+        {/* ── Section 1: Export Registrations — 5 cards ── */}
+        <div style={{ marginBottom: 'clamp(2rem, 4vw, 3.5rem)' }}>
           <CertSectionLabel>Export Registrations</CertSectionLabel>
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <CertCard src="/images/certs/DGFT_IEC.png"   alt="DGFT IEC"   imgHeight={70} />
-            <CertCard src="/images/certs/GST.png"         alt="GST"         imgHeight={70} />
-            <CertCard src="/images/certs/fssai.png"       alt="FSSAI"       imgHeight={70} />
-            <CertCard src="/images/certs/apeda.png"       alt="APEDA"       imgHeight={70} />
-            <CertCard src="/images/certs/Coir_Board.png"  alt="Coir Board"  imgHeight={70} />
+          <div style={{ display: 'flex', gap: '0.875rem' }}>
+            <CertCard src="/images/certs/DGFT_IEC.png"   alt="DGFT IEC"   imgHeight={68} cardHeight={110} />
+            <CertCard src="/images/certs/GST.png"         alt="GST"         imgHeight={68} cardHeight={110} />
+            <CertCard src="/images/certs/fssai.png"       alt="FSSAI"       imgHeight={68} cardHeight={110} />
+            <CertCard src="/images/certs/apeda.png"       alt="APEDA"       imgHeight={68} cardHeight={110} />
+            <CertCard src="/images/certs/Coir_Board.png"  alt="Coir Board"  imgHeight={68} cardHeight={110} />
           </div>
         </div>
 
-        {/* ── Section 2: Quality & Product Certifications ── */}
-        <div style={{ marginBottom: 'clamp(2.5rem, 5vw, 4rem)' }}>
+        {/* ── Section 2: Quality & Product Certifications — 3 cards ── */}
+        <div style={{ marginBottom: 'clamp(2rem, 4vw, 3.5rem)' }}>
           <CertSectionLabel>Quality &amp; Product Certifications</CertSectionLabel>
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <CertCard src="/images/certs/ISO_9001_2015.png" alt="ISO 9001:2015"  imgHeight={80} />
-            <CertCard src="/images/certs/haccp.png"          alt="HACCP Certified" imgHeight={80} />
-            <CertCard src="/images/certs/globalgap.png"      alt="GLOBALG.A.P."    imgHeight={80} />
+          <div style={{ display: 'flex', gap: '0.875rem' }}>
+            <CertCard src="/images/certs/ISO_9001_2015.png" alt="ISO 9001:2015"   imgHeight={90} cardHeight={130} />
+            <CertCard src="/images/certs/haccp.png"          alt="HACCP Certified" imgHeight={90} cardHeight={130} />
+            <CertCard src="/images/certs/globalgap.png"      alt="GLOBALG.A.P."   imgHeight={90} cardHeight={130} />
           </div>
         </div>
 
-        {/* ── Section 3: Key Export Documentation ── */}
+        {/* ── Section 3: Key Export Documentation — 5 cards with labels ── */}
         <div>
           <CertSectionLabel>Key Export Documentation</CertSectionLabel>
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <CertCard src="/images/certs/Certificate_of_Origin.png"    alt="Certificate of Origin"     imgHeight={64} label="Certificate of Origin" />
-            <CertCard src="/images/certs/Commercial_Invoice.png"       alt="Commercial Invoice"         imgHeight={64} label="Commercial Invoice" />
-            <CertCard src="/images/certs/Packing_List.png"             alt="Packing List"               imgHeight={64} label="Packing List" />
-            <CertCard src="/images/certs/Bill_of_Lading.png"           alt="Bill of Lading"             imgHeight={64} label="Bill of Lading" />
-            <CertCard src="/images/certs/Phytosanitary_Certificate.png" alt="Phytosanitary Certificate" imgHeight={64} label="Phytosanitary Certificate" />
+          <div style={{ display: 'flex', gap: '0.875rem' }}>
+            <CertCard
+              src="/images/certs/Certificate_of_Origin.png"
+              alt="Certificate of Origin"
+              imgHeight={56}
+              cardHeight={130}
+              label={"Certificate\nof Origin"}
+            />
+            <CertCard
+              src="/images/certs/Commercial_Invoice.png"
+              alt="Commercial Invoice"
+              imgHeight={56}
+              cardHeight={130}
+              label={"Commercial\nInvoice"}
+            />
+            <CertCard
+              src="/images/certs/Packing_List.png"
+              alt="Packing List"
+              imgHeight={56}
+              cardHeight={130}
+              label={"Packing\nList"}
+            />
+            <CertCard
+              src="/images/certs/Bill_of_Lading.png"
+              alt="Bill of Lading"
+              imgHeight={56}
+              cardHeight={130}
+              label={"Bill of\nLading"}
+            />
+            <CertCard
+              src="/images/certs/Phytosanitary_Certificate.png"
+              alt="Phytosanitary Certificate"
+              imgHeight={56}
+              cardHeight={130}
+              label={"Phytosanitary\nCertificate"}
+            />
           </div>
         </div>
 
