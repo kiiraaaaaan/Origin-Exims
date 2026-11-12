@@ -54,28 +54,30 @@ function RegCard({ src, alt }: { src: string; alt: string }) {
     <div
       style={{
         flexShrink: 0,
-        width: '240px',
-        height: '160px',
+        width: '270px',
+        height: '185px',
         marginRight: '20px',
         background: '#ffffff',
         border: '1px solid rgba(0,0,0,0.07)',
-        borderRadius: '16px',
+        borderRadius: '18px',
         boxShadow: '0 2px 16px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '1.5rem',
+        padding: '1.75rem',
+        boxSizing: 'border-box' as const,
       }}
     >
       <img
         src={src}
         alt={alt}
         style={{
-          height: '110px',
+          height: '125px',
           width: 'auto',
-          maxWidth: '200px',
+          maxWidth: '220px',
           objectFit: 'contain',
           display: 'block',
+          margin: 'auto',
         }}
       />
     </div>
@@ -88,28 +90,32 @@ function DocCard({ src, alt }: { src: string; alt: string }) {
     <div
       style={{
         flexShrink: 0,
-        width: '200px',
-        height: '160px',
+        width: '220px',
+        height: '185px',
         marginRight: '20px',
         background: '#ffffff',
         border: '1px solid rgba(0,0,0,0.07)',
-        borderRadius: '16px',
+        borderRadius: '18px',
         boxShadow: '0 2px 16px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '1.5rem',
+        padding: '1.75rem',
+        boxSizing: 'border-box' as const,
+        overflow: 'hidden',
       }}
     >
       <img
         src={src}
         alt={alt}
         style={{
-          height: '100px',
+          height: '115px',
           width: 'auto',
-          maxWidth: '170px',
+          maxWidth: '185px',
           objectFit: 'contain',
+          objectPosition: 'center',
           display: 'block',
+          margin: 'auto',
         }}
       />
     </div>
