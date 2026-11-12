@@ -3,105 +3,163 @@
 import React from 'react';
 import Section from '@/components/Section';
 
-/* ─── Assets ─────────────────────────────────────────────────────────────── */
+/* ─── Registration logos — with sub-labels matching reference ─────────────── */
 const REGISTRATION_LOGOS = [
-  { src: '/images/certs/01_DGFT_IEC.png',    alt: 'DGFT IEC' },
-  { src: '/images/certs/02_GST.png',          alt: 'GST' },
-  { src: '/images/certs/03_FSSAI.png',        alt: 'FSSAI' },
-  { src: '/images/certs/04_APEDA.png',        alt: 'APEDA' },
-  { src: '/images/certs/05_COIR_BOARD.png',   alt: 'Coir Board' },
-  { src: '/images/certs/06_SPICES_BOARD.png', alt: 'Spices Board' },
-  { src: '/images/certs/07_MSME.png',         alt: 'MSME' },
+  {
+    src: '/images/certs/DGFT_IEC.png',
+    alt: 'DGFT IEC',
+    label: 'DGFT\n(IEC)',
+  },
+  {
+    src: '/images/certs/GST.png',
+    alt: 'GST',
+    label: 'Goods and\nServices Tax',
+  },
+  {
+    src: '/images/certs/FSSAI.png',
+    alt: 'FSSAI',
+    label: 'Food Safety &\nStandards Authority',
+  },
+  {
+    src: '/images/certs/apeda.png',
+    alt: 'APEDA',
+    label: 'APEDA',
+  },
+  {
+    src: '/images/certs/Coir_Board.png',
+    alt: 'Coir Board',
+    label: 'COIR BOARD\nMinistry of MSME, Govt. of India',
+  },
+  {
+    src: '/images/certs/Spices_Board_India.png',
+    alt: 'Spices Board India',
+    label: 'SPICES BOARD\nINDIA',
+  },
+  {
+    src: '/images/certs/MSME.png',
+    alt: 'MSME',
+    label: 'Ministry of Micro,\nSmall & Medium Enterprises',
+  },
 ];
 
+/* ─── Documentation icons ─────────────────────────────────────────────────── */
 const DOC_ICONS = [
-  { src: '/images/certs/08_Certificate_of_Origin.png',    alt: 'Certificate of Origin' },
-  { src: '/images/certs/09_Commercial_Invoice.png',       alt: 'Commercial Invoice' },
-  { src: '/images/certs/10_Packing_List.png',             alt: 'Packing List' },
-  { src: '/images/certs/11_Bill_of_Lading.png',           alt: 'Bill of Lading' },
-  { src: '/images/certs/12_Shipping_Bill.png',            alt: 'Shipping Bill' },
-  { src: '/images/certs/13_Phytosanitary_Certificate.png',alt: 'Phytosanitary Certificate' },
-  { src: '/images/certs/14_Fumigation_Certificate.png',   alt: 'Fumigation Certificate' },
-  { src: '/images/certs/15_Certificate_of_Analysis.png',  alt: 'Certificate of Analysis' },
-  { src: '/images/certs/16_Inspection_Certificate.png',   alt: 'Inspection Certificate' },
+  { src: '/images/certs/Certificate_of_Origin.png',    alt: 'Certificate of Origin',    label: 'Certificate\nof Origin' },
+  { src: '/images/certs/Commercial_Invoice.png',       alt: 'Commercial Invoice',        label: 'Commercial\nInvoice' },
+  { src: '/images/certs/Packing_List.png',             alt: 'Packing List',              label: 'Packing\nList' },
+  { src: '/images/certs/Bill_of_Lading.png',           alt: 'Bill of Lading',            label: 'Bill of\nLading' },
+  { src: '/images/certs/Shipping_Bill.png',            alt: 'Shipping Bill',             label: 'Shipping\nBill' },
+  { src: '/images/certs/Phytosanitary_Certificate.png',alt: 'Phytosanitary Certificate', label: 'Phytosanitary\nCertificate' },
+  { src: '/images/certs/Fumigation_Certificate.png',   alt: 'Fumigation Certificate',    label: 'Fumigation\nCertificate' },
+  { src: '/images/certs/Certificate_of_Analysis.png',  alt: 'Certificate of Analysis',   label: 'Certificate\nof Analysis' },
+  { src: '/images/certs/Inspection_Certificate.png',   alt: 'Inspection Certificate',    label: 'Inspection\nCertificate' },
 ];
 
-/* ─── Injected CSS ───────────────────────────────────────────────────────── */
+/* ─── CSS ─────────────────────────────────────────────────────────────────── */
 const MARQUEE_CSS = `
-@keyframes marquee-ltr {
+@keyframes marquee-scroll {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-.marquee-track-reg {
+.mq-reg {
   display: flex;
   align-items: center;
   width: max-content;
-  animation: marquee-ltr 22s linear infinite;
+  animation: marquee-scroll 30s linear infinite;
 }
-.marquee-track-reg:hover {
-  animation-play-state: paused;
-}
-.marquee-track-doc {
+.mq-reg:hover { animation-play-state: paused; }
+
+.mq-doc {
   display: flex;
   align-items: center;
   width: max-content;
-  animation: marquee-ltr 26s linear infinite;
+  animation: marquee-scroll 36s linear infinite;
 }
-.marquee-track-doc:hover {
-  animation-play-state: paused;
-}
+.mq-doc:hover { animation-play-state: paused; }
 `;
 
-/* ─── Marquee logo item ───────────────────────────────────────────────────── */
-function RegLogo({ src, alt }: { src: string; alt: string }) {
+/* ─── Single registration item ───────────────────────────────────────────── */
+function RegItem({ src, alt, label }: { src: string; alt: string; label: string }) {
   return (
     <div
       style={{
         flexShrink: 0,
         display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        marginRight: '70px',
+        gap: '0.75rem',
+        width: '220px',
+        marginRight: '60px',
       }}
     >
       <img
         src={src}
         alt={alt}
         style={{
-          height: '110px',
+          height: '100px',
           width: 'auto',
-          maxWidth: '260px',
+          maxWidth: '210px',
           objectFit: 'contain',
           display: 'block',
         }}
       />
+      <span
+        style={{
+          fontSize: '0.72rem',
+          fontWeight: 500,
+          color: 'rgba(30,30,30,0.55)',
+          textAlign: 'center',
+          lineHeight: 1.4,
+          whiteSpace: 'pre-line',
+          letterSpacing: '0.01em',
+        }}
+      >
+        {label}
+      </span>
     </div>
   );
 }
 
-/* ─── Marquee doc item ────────────────────────────────────────────────────── */
-function DocIcon({ src, alt }: { src: string; alt: string }) {
+/* ─── Single doc item ─────────────────────────────────────────────────────── */
+function DocItem({ src, alt, label }: { src: string; alt: string; label: string }) {
   return (
     <div
       style={{
         flexShrink: 0,
         display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        marginRight: '70px',
+        gap: '0.75rem',
+        width: '180px',
+        marginRight: '60px',
       }}
     >
       <img
         src={src}
         alt={alt}
         style={{
-          height: '110px',
+          height: '90px',
           width: 'auto',
-          maxWidth: '185px',
+          maxWidth: '170px',
           objectFit: 'contain',
           display: 'block',
         }}
       />
+      <span
+        style={{
+          fontSize: '0.72rem',
+          fontWeight: 500,
+          color: 'rgba(30,30,30,0.55)',
+          textAlign: 'center',
+          lineHeight: 1.4,
+          whiteSpace: 'pre-line',
+          letterSpacing: '0.01em',
+        }}
+      >
+        {label}
+      </span>
     </div>
   );
 }
@@ -119,7 +177,7 @@ export default function CertificationsPage() {
           paddingBottom: 'clamp(4rem, 8vw, 7rem)',
         }}
       >
-        {/* ── Page header (90 vw wrapper) ── */}
+        {/* ── Page header ── */}
         <div
           style={{
             width: '90%',
@@ -154,62 +212,78 @@ export default function CertificationsPage() {
           </p>
         </div>
 
-        {/* ═══════════════════════════════════════════════════════════
-            MARQUEE 1 — Registration Logos
-        ══════════════════════════════════════════════════════════════ */}
+        {/* ── Section label: Business & Export Registrations ── */}
+        <div
+          style={{
+            width: '90%',
+            maxWidth: '1400px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            marginBottom: '1.25rem',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '1rem',
+          }}
+        >
+          <span style={{ fontSize: '0.72rem', fontWeight: 800, letterSpacing: '0.16em', textTransform: 'uppercase' as const, color: 'var(--color-graphite)', whiteSpace: 'nowrap' }}>
+            Business &amp; Export Registrations
+          </span>
+          <div style={{ flex: 1, height: '1px', background: 'rgba(0,0,0,0.10)' }} />
+        </div>
+
+        {/* ═══ MARQUEE 1 — Registration Logos ═══ */}
         <div
           style={{
             overflow: 'hidden',
             width: '100vw',
             position: 'relative',
             left: '50%',
-            right: '50%',
             marginLeft: '-50vw',
-            marginRight: '-50vw',
-            height: '200px',
-            display: 'flex',
-            alignItems: 'center',
+            paddingTop: '1rem',
+            paddingBottom: '1rem',
             marginBottom: 'clamp(3rem, 6vw, 5rem)',
           }}
         >
-          <div className="marquee-track-reg">
-            {/* Set A */}
-            {REGISTRATION_LOGOS.map((logo) => (
-              <RegLogo key={`a-${logo.alt}`} src={logo.src} alt={logo.alt} />
-            ))}
-            {/* Set B — duplicate for seamless loop */}
-            {REGISTRATION_LOGOS.map((logo) => (
-              <RegLogo key={`b-${logo.alt}`} src={logo.src} alt={logo.alt} />
-            ))}
+          <div className="mq-reg">
+            {REGISTRATION_LOGOS.map((l) => <RegItem key={`a-${l.alt}`} {...l} />)}
+            {REGISTRATION_LOGOS.map((l) => <RegItem key={`b-${l.alt}`} {...l} />)}
           </div>
         </div>
 
-        {/* ═══════════════════════════════════════════════════════════
-            MARQUEE 2 — Export Documentation Icons
-        ══════════════════════════════════════════════════════════════ */}
+        {/* ── Section label: Export Documentation ── */}
+        <div
+          style={{
+            width: '90%',
+            maxWidth: '1400px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            marginBottom: '1.25rem',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '1rem',
+          }}
+        >
+          <span style={{ fontSize: '0.72rem', fontWeight: 800, letterSpacing: '0.16em', textTransform: 'uppercase' as const, color: 'var(--color-graphite)', whiteSpace: 'nowrap' }}>
+            Export Documentation
+          </span>
+          <div style={{ flex: 1, height: '1px', background: 'rgba(0,0,0,0.10)' }} />
+        </div>
+
+        {/* ═══ MARQUEE 2 — Documentation Icons ═══ */}
         <div
           style={{
             overflow: 'hidden',
             width: '100vw',
             position: 'relative',
             left: '50%',
-            right: '50%',
             marginLeft: '-50vw',
-            marginRight: '-50vw',
-            height: '200px',
-            display: 'flex',
-            alignItems: 'center',
+            paddingTop: '1rem',
+            paddingBottom: '1rem',
           }}
         >
-          <div className="marquee-track-doc">
-            {/* Set A */}
-            {DOC_ICONS.map((icon) => (
-              <DocIcon key={`a-${icon.alt}`} src={icon.src} alt={icon.alt} />
-            ))}
-            {/* Set B — duplicate for seamless loop */}
-            {DOC_ICONS.map((icon) => (
-              <DocIcon key={`b-${icon.alt}`} src={icon.src} alt={icon.alt} />
-            ))}
+          <div className="mq-doc">
+            {DOC_ICONS.map((d) => <DocItem key={`a-${d.alt}`} {...d} />)}
+            {DOC_ICONS.map((d) => <DocItem key={`b-${d.alt}`} {...d} />)}
           </div>
         </div>
 
