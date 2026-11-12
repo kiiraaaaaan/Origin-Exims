@@ -28,7 +28,7 @@ export default function HomePage() {
             position: 'absolute',
             inset: 0,
             zIndex: 0,
-            backgroundImage: 'url(/images/coir-fibre.jpg)',
+            backgroundImage: 'url(/images/hero-farming.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center 60%',
           }}
