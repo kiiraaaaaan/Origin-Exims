@@ -37,7 +37,7 @@ export default function HomePage() {
           </div>
           <h1 style={{ fontFamily: 'var(--font-inter), sans-serif', fontSize: 'clamp(2.8rem, 5.5vw, 5.5rem)', fontWeight: 800, lineHeight: 1.08, letterSpacing: '-0.03em', color: '#ffffff', margin: '0 0 1.75rem' }}>
             Your Trusted<br />
-            Exporters of Premium<br />
+            Exporter of Premium<br />
             <span className="hero-bronze-glow">Coir &amp; Agro</span>
             <span style={{ color: '#ffffff' }}> Commodities.</span>
           </h1>
