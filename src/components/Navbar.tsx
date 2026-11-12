@@ -40,6 +40,12 @@ export default function Navbar() {
   // Only home page has dark hero background — all other pages are light
   const isDark = pathname === '/';
 
+  // Product detail pages (3+ path segments) have a dark product image at top —
+  // give the navbar a frosted white background so text is readable
+  const isProductDetail =
+    pathname.startsWith('/product/') &&
+    pathname.split('/').filter(Boolean).length >= 3;
+
   // ── Sliding liquid glass pill ───────────────────────────────────────────
   const navRef = useRef<HTMLElement>(null);
   const [pill, setPill] = useState({ left: 0, width: 0, ready: false });
@@ -101,15 +107,16 @@ export default function Navbar() {
     return () => { document.body.style.overflow = ''; };
   }, [isOpen]);
 
-  // ── Header — transparent, seamless ──────────────────────────────────────
   const headerStyle: React.CSSProperties = {
     position: 'absolute',
     top: 0, left: 0, right: 0,
     zIndex: 100,
     width: '100%',
-    backgroundColor: 'transparent',
-    borderBottom: 'none',
-    boxShadow: 'none',
+    backgroundColor: isProductDetail ? 'rgba(245, 245, 247, 0.92)' : 'transparent',
+    backdropFilter: isProductDetail ? 'blur(24px) saturate(180%)' : 'none',
+    WebkitBackdropFilter: isProductDetail ? 'blur(24px) saturate(180%)' : 'none',
+    borderBottom: isProductDetail ? '1px solid rgba(0,0,0,0.07)' : 'none',
+    boxShadow: isProductDetail ? '0 1px 0 rgba(0,0,0,0.05)' : 'none',
   };
 
   const hPad = 14;
