@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Section from '@/components/Section';
 import Container from '@/components/Container';
 import Placeholder from '@/components/Placeholder';
+import { CATEGORIES, getProductsByCategory } from '@/lib/products';
 
 export default function HomePage() {
   return (
@@ -231,97 +232,124 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      {/* 3. Quality & Export Assurance — Light section with phases */}
-      <Section background="porcelain">
-        <Container>
-          <div style={{
-            maxWidth: '640px',
-            marginBottom: 'clamp(2.5rem, 5vw, 4rem)',
-          }}>
-            <span className="text-caption" style={{ color: 'var(--color-bronze)' }}>Our Process</span>
-            <h2 className="text-section-title" style={{ marginTop: '0.5rem', color: 'var(--color-graphite)' }}>
-              Quality &amp; Export Assurance
+      {/* ── CERTIFICATIONS SECTION ───────────────────────────────────────── */}
+      <section id="certifications" style={{ scrollMarginTop: 'var(--nav-height)' }}>
+        {/* Inline certifications content — same marquees as /certifications page */}
+        <Section background="porcelain" style={{ paddingTop: 'clamp(4rem, 8vw, 6rem)', paddingBottom: 'clamp(4rem, 8vw, 6rem)' }}>
+          <div style={{ width: '90%', maxWidth: '1400px', marginLeft: 'auto', marginRight: 'auto', marginBottom: 'clamp(2rem, 4vw, 3rem)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.9rem' }}>
+              <span style={{ display: 'block', width: '1.75rem', height: '1.5px', background: 'var(--color-bronze)' }} />
+              <span style={{ fontSize: '0.7rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: 'var(--color-bronze)' }}>Certifications</span>
+            </div>
+            <h2 style={{ fontFamily: 'var(--font-inter), sans-serif', fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', fontWeight: 800, color: 'var(--color-graphite)', letterSpacing: '-0.03em', lineHeight: 1.1, margin: '0 0 0.75rem' }}>
+              Certifications &amp; Compliance
             </h2>
+            <p style={{ fontSize: 'clamp(0.9rem, 1.05vw, 1rem)', lineHeight: 1.7, color: 'rgba(30,30,30,0.55)', margin: 0, maxWidth: '500px' }}>
+              Key registrations that enable us to export high-quality coir and agricultural commodities to global markets.
+            </p>
           </div>
-
-          {/* 4-Phase Grid with arrows */}
-          <div className="phase-grid">
-            {/* Phase 01 */}
-            <div className="phase-card">
-              <div className="phase-img-wrap">
-                <img src="/images/phase-supplier.jpg" alt="Supplier evaluation and factory visit" className="phase-img" />
-              </div>
-              <div className="phase-content">
-                <span className="phase-label">Phase 01</span>
-                <h3 className="phase-title">Supplier Verification</h3>
-                <p className="phase-desc">
-                  Responsible sourcing and supplier evaluation to establish product quality and reliability.
-                </p>
-              </div>
-            </div>
-
-            <div className="phase-arrow" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 12h14M13 5l7 7-7 7" />
-              </svg>
-            </div>
-
-            {/* Phase 02 */}
-            <div className="phase-card">
-              <div className="phase-img-wrap">
-                <img src="/images/phase-inspection.jpg" alt="Quality inspection and product testing" className="phase-img" />
-              </div>
-              <div className="phase-content">
-                <span className="phase-label">Phase 02</span>
-                <h3 className="phase-title">Quality Inspection</h3>
-                <p className="phase-desc">
-                  Product checks, batch inspection, grading, and testing based on product requirements.
-                </p>
-              </div>
-            </div>
-
-            <div className="phase-arrow" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 12h14M13 5l7 7-7 7" />
-              </svg>
-            </div>
-
-            {/* Phase 03 */}
-            <div className="phase-card">
-              <div className="phase-img-wrap">
-                <img src="/images/phase-packaging.jpg" alt="Export packaging and labelling" className="phase-img" />
-              </div>
-              <div className="phase-content">
-                <span className="phase-label">Phase 03</span>
-                <h3 className="phase-title">Export Packaging</h3>
-                <p className="phase-desc">
-                  Appropriate packaging, labelling, and handling to meet destination-market requirements.
-                </p>
-              </div>
-            </div>
-
-            <div className="phase-arrow" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 12h14M13 5l7 7-7 7" />
-              </svg>
-            </div>
-
-            {/* Phase 04 */}
-            <div className="phase-card">
-              <div className="phase-img-wrap">
-                <img src="/images/phase-dispatch.jpg" alt="Shipping containers at port for dispatch" className="phase-img" />
-              </div>
-              <div className="phase-content">
-                <span className="phase-label">Phase 04</span>
-                <h3 className="phase-title">Documentation &amp; Dispatch</h3>
-                <p className="phase-desc">
-                  Export documentation, applicable certifications, customs procedures, and shipment coordination.
-                </p>
-              </div>
-            </div>
+          <div style={{ textAlign: 'center', marginTop: '1rem' }}>
+            <Link href="/certifications" style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--color-bronze)', textDecoration: 'none', letterSpacing: '0.04em', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
+              View full certifications page ↗
+            </Link>
           </div>
-        </Container>
-      </Section>
+        </Section>
+      </section>
+
+      {/* ── PRODUCTS SECTION ─────────────────────────────────────────────── */}
+      <section id="product" style={{ scrollMarginTop: 'var(--nav-height)' }}>
+        <Section background="porcelain" style={{ paddingTop: 'clamp(4rem, 8vw, 6rem)', paddingBottom: 'clamp(4rem, 8vw, 6rem)' }}>
+          <Container>
+            <div style={{ maxWidth: '640px', marginBottom: 'clamp(2.5rem, 5vw, 4rem)' }}>
+              <span className="text-caption" style={{ color: 'var(--color-bronze)' }}>Export Portfolio</span>
+              <h2 style={{ fontFamily: 'var(--font-serif-title), "Playfair Display", Georgia, serif', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 500, color: 'var(--color-graphite)', letterSpacing: '-0.02em', lineHeight: 1.1, margin: '0.5rem 0 1rem' }}>
+                Our Products
+              </h2>
+              <p style={{ fontSize: 'clamp(0.95rem, 1.1vw, 1.0625rem)', lineHeight: 1.7, color: 'rgba(30,30,30,0.58)', maxWidth: '520px', margin: 0 }}>
+                Origin EXIMS exports two core product categories — agricultural commodities and coconut coir products — sourced from South India and delivered to global markets.
+              </p>
+            </div>
+            <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' as const }}>
+              {CATEGORIES.map((cat) => (
+                <Link
+                  key={cat.id}
+                  href={cat.slug}
+                  style={{
+                    flex: '1 1 300px',
+                    display: 'block',
+                    borderRadius: '16px',
+                    overflow: 'hidden',
+                    textDecoration: 'none',
+                    background: '#fff',
+                    border: '1px solid rgba(0,0,0,0.07)',
+                    boxShadow: '0 2px 16px rgba(0,0,0,0.055)',
+                    transition: 'transform 0.2s ease',
+                  }}
+                >
+                  <img src={cat.image} alt={cat.imageAlt} style={{ width: '100%', height: '220px', objectFit: 'cover', display: 'block' }} />
+                  <div style={{ padding: '1.5rem' }}>
+                    <h3 style={{ fontFamily: 'var(--font-serif-title), serif', fontSize: '1.25rem', fontWeight: 500, color: 'var(--color-graphite)', margin: '0 0 0.5rem' }}>{cat.name}</h3>
+                    <p style={{ fontSize: '0.9rem', lineHeight: 1.6, color: 'rgba(30,30,30,0.58)', margin: '0 0 1rem' }}>{cat.intro}</p>
+                    <span style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--color-bronze)', letterSpacing: '0.04em', display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
+                      Explore {cat.name} ↗
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </Container>
+        </Section>
+      </section>
+
+      {/* ── CONTACT SECTION ──────────────────────────────────────────────── */}
+      <section id="contact" style={{ scrollMarginTop: 'var(--nav-height)' }}>
+        <Section background="porcelain" style={{ paddingTop: 'clamp(4rem, 8vw, 6rem)', paddingBottom: 'clamp(5rem, 10vw, 8rem)' }}>
+          <Container>
+            <div style={{ maxWidth: '720px', marginBottom: 'clamp(3rem, 6vw, 5rem)' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.25rem 0.75rem', borderRadius: '999px', backgroundColor: 'rgba(0,0,0,0.05)', border: '1px solid rgba(0,0,0,0.08)', marginBottom: '1rem' }}>
+                <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--color-bronze)', display: 'block' }} />
+                <span className="text-caption" style={{ color: 'var(--color-graphite)' }}>Direct Communication</span>
+              </div>
+              <h2 style={{ fontFamily: 'var(--font-inter), sans-serif', fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', fontWeight: 800, color: 'var(--color-graphite)', letterSpacing: '-0.03em', lineHeight: 1.08, margin: '0 0 1rem' }}>
+                Contact Us
+              </h2>
+              <p style={{ fontSize: 'clamp(0.9rem, 1.05vw, 1rem)', lineHeight: 1.7, color: 'rgba(30,30,30,0.55)', margin: 0, maxWidth: '500px' }}>
+                Structural channels reserved for global trade correspondence, corporate communication, and export inquiries.
+              </p>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 'clamp(2rem, 5vw, 4rem)', alignItems: 'start' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                <h3 className="text-subsection-title" style={{ color: 'var(--color-graphite)' }}>Corporate Offices &amp; Channels</h3>
+                <Placeholder label="Reserved: Registered Office Location" hint="Corporate headquarters • India business address" theme="light" minHeight="140px" />
+                <Placeholder label="Reserved: Telecommunication Channels" hint="Official business phone • Corporate facsimile • Direct desk" theme="light" minHeight="140px" />
+                <Placeholder label="Reserved: Electronic Mail Directory" hint="General export desk • Commercial trade inquiries • Compliance office" theme="light" minHeight="140px" />
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                <h3 className="text-subsection-title" style={{ color: 'var(--color-graphite)' }}>Trade Enquiry</h3>
+                <div style={{ backgroundColor: 'rgba(255,255,255,0.7)', border: '1px solid rgba(29,29,31,0.12)', borderRadius: '14px', padding: 'clamp(1.75rem, 4vw, 2.5rem)', display: 'flex', flexDirection: 'column', gap: '1.25rem', backdropFilter: 'blur(10px)' }}>
+                  {[['Name / Organization','Full Name or Business Entity'],['Business Email','Corporate Email Address'],['Destination Country','Target Destination / Port']].map(([label, hint]) => (
+                    <div key={label} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                      <span style={{ fontSize: '0.8125rem', fontWeight: 500, color: 'var(--color-graphite)' }}>{label}</span>
+                      <div style={{ height: '46px', borderRadius: '8px', border: '1px dashed rgba(29,29,31,0.2)', backgroundColor: 'rgba(0,0,0,0.02)', display: 'flex', alignItems: 'center', padding: '0 1rem', color: 'var(--color-titanium)', fontSize: '0.875rem' }}>
+                        {hint}
+                      </div>
+                    </div>
+                  ))}
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                    <span style={{ fontSize: '0.8125rem', fontWeight: 500, color: 'var(--color-graphite)' }}>Enquiry Specification</span>
+                    <div style={{ height: '100px', borderRadius: '8px', border: '1px dashed rgba(29,29,31,0.2)', backgroundColor: 'rgba(0,0,0,0.02)', display: 'flex', alignItems: 'flex-start', padding: '0.875rem 1rem', color: 'var(--color-titanium)', fontSize: '0.875rem' }}>
+                      Product Requirements, Volumes &amp; Incoterms
+                    </div>
+                  </div>
+                  <Link href="/contact" style={{ display: 'block', textAlign: 'center', padding: '0.875rem', borderRadius: '999px', background: 'var(--color-bronze)', color: '#fff', fontWeight: 600, fontSize: '0.9rem', textDecoration: 'none', marginTop: '0.5rem' }}>
+                    Go to full Contact page ↗
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </Container>
+        </Section>
+      </section>
     </>
   );
 }
