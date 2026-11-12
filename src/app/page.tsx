@@ -4,6 +4,7 @@ import Section from '@/components/Section';
 import Container from '@/components/Container';
 import Placeholder from '@/components/Placeholder';
 import CertMarquees from '@/components/CertMarquees';
+import ContactSection from '@/components/ContactSection';
 import { CATEGORIES, getProductsByCategory } from '@/lib/products';
 
 export default function HomePage() {
@@ -163,52 +164,7 @@ export default function HomePage() {
       <section id="contact" style={{ scrollMarginTop: 'var(--nav-height)', background: '#ffffff' }}>
         <div style={{ paddingTop: 'clamp(4rem, 8vw, 6rem)', paddingBottom: 'clamp(5rem, 10vw, 8rem)' }}>
           <Container>
-            <div style={{ maxWidth: '720px', marginBottom: 'clamp(3rem, 6vw, 5rem)' }}>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.25rem 0.75rem', borderRadius: '999px', backgroundColor: 'rgba(0,0,0,0.05)', border: '1px solid rgba(0,0,0,0.08)', marginBottom: '1rem' }}>
-                <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--color-bronze)', display: 'block' }} />
-                <span className="text-caption" style={{ color: 'var(--color-graphite)' }}>Direct Communication</span>
-              </div>
-              <h2 style={{ fontFamily: 'var(--font-inter), sans-serif', fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', fontWeight: 800, color: 'var(--color-graphite)', letterSpacing: '-0.03em', lineHeight: 1.08, margin: '0 0 1rem' }}>
-                Contact Us
-              </h2>
-              <p style={{ fontSize: 'clamp(0.9rem, 1.05vw, 1rem)', lineHeight: 1.7, color: 'rgba(30,30,30,0.55)', margin: 0, maxWidth: '500px' }}>
-                Structural channels reserved for global trade correspondence, corporate communication, and export inquiries.
-              </p>
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 'clamp(2rem, 5vw, 4rem)', alignItems: 'start' }}>
-              <div style={{ display: 'flex', flexDirection: 'column' as const, gap: '1.5rem' }}>
-                <h3 className="text-subsection-title" style={{ color: 'var(--color-graphite)' }}>Corporate Offices &amp; Channels</h3>
-                <Placeholder label="Reserved: Registered Office Location" hint="Corporate headquarters • India business address" theme="light" minHeight="140px" />
-                <Placeholder label="Reserved: Telecommunication Channels" hint="Official business phone • Corporate facsimile • Direct desk" theme="light" minHeight="140px" />
-                <Placeholder label="Reserved: Electronic Mail Directory" hint="General export desk • Commercial trade inquiries • Compliance office" theme="light" minHeight="140px" />
-              </div>
-              <div style={{ display: 'flex', flexDirection: 'column' as const, gap: '1.5rem' }}>
-                <h3 className="text-subsection-title" style={{ color: 'var(--color-graphite)' }}>Trade Enquiry</h3>
-                <div style={{ backgroundColor: 'rgba(255,255,255,0.75)', border: '1px solid rgba(29,29,31,0.12)', borderRadius: '16px', padding: 'clamp(1.75rem, 4vw, 2.5rem)', display: 'flex', flexDirection: 'column' as const, gap: '1.25rem', backdropFilter: 'blur(10px)' }}>
-                  {[
-                    ['Name / Organization', 'Full Name or Business Entity'],
-                    ['Business Email', 'Corporate Email Address'],
-                    ['Destination Country', 'Target Destination / Port'],
-                  ].map(([label, hint]) => (
-                    <div key={label} style={{ display: 'flex', flexDirection: 'column' as const, gap: '0.5rem' }}>
-                      <span style={{ fontSize: '0.8125rem', fontWeight: 500, color: 'var(--color-graphite)' }}>{label}</span>
-                      <div style={{ height: '46px', borderRadius: '8px', border: '1px dashed rgba(29,29,31,0.2)', backgroundColor: 'rgba(0,0,0,0.02)', display: 'flex', alignItems: 'center', padding: '0 1rem', color: 'rgba(30,30,30,0.4)', fontSize: '0.875rem' }}>
-                        {hint}
-                      </div>
-                    </div>
-                  ))}
-                  <div style={{ display: 'flex', flexDirection: 'column' as const, gap: '0.5rem' }}>
-                    <span style={{ fontSize: '0.8125rem', fontWeight: 500, color: 'var(--color-graphite)' }}>Enquiry Specification</span>
-                    <div style={{ height: '100px', borderRadius: '8px', border: '1px dashed rgba(29,29,31,0.2)', backgroundColor: 'rgba(0,0,0,0.02)', display: 'flex', alignItems: 'flex-start', padding: '0.875rem 1rem', color: 'rgba(30,30,30,0.4)', fontSize: '0.875rem' }}>
-                      Product Requirements, Volumes &amp; Incoterms
-                    </div>
-                  </div>
-                  <Link href="/contact" style={{ display: 'block', textAlign: 'center' as const, padding: '0.9rem', borderRadius: '999px', background: 'var(--color-bronze)', color: '#fff', fontWeight: 600, fontSize: '0.9rem', textDecoration: 'none', marginTop: '0.5rem', letterSpacing: '0.02em' }}>
-                    Go to full Contact page ↗
-                  </Link>
-                </div>
-              </div>
-            </div>
+            <ContactSection />
           </Container>
         </div>
       </section>
