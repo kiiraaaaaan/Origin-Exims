@@ -12,7 +12,7 @@ const HeroGlobeScene = dynamic(() => import('@/components/HeroGlobeScene'), {
 export default function HomePage() {
   return (
     <>
-      {/* 1. Immersive Hero Section with Animated Rotating Globe Scene */}
+      {/* 1. Hero Section — Editorial style with product background */}
       <Section
         background="black"
         spacing="none"
@@ -21,97 +21,142 @@ export default function HomePage() {
           minHeight: '100vh',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'center',
+          justifyContent: 'flex-end',
           overflow: 'hidden',
           paddingTop: 'var(--nav-height)',
-          paddingBottom: 'clamp(3rem, 6vw, 5rem)',
+          paddingBottom: 'clamp(4rem, 8vw, 6rem)',
         }}
       >
-        {/* Full-Screen Animated Globe & Port Background */}
+        {/* Full-bleed product background image */}
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            zIndex: 0,
+            backgroundImage: 'url(/images/coir-fibre.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center 60%',
+          }}
+        />
+        {/* Dark overlay for text legibility */}
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            zIndex: 1,
+            background: 'linear-gradient(to right, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.20) 100%)',
+          }}
+        />
+
+        {/* 3D Globe — stays on the right */}
         <HeroGlobeScene />
 
-        {/* Hero Content Overlay — Apple Vibrancy Card */}
+        {/* Text content — left-aligned, editorial */}
         <Container style={{ position: 'relative', zIndex: 10, width: '100%' }}>
-          {/* Frosted glass vibrancy card — Apple material design */}
+          {/* Top badge: orange dash + label */}
           <div
             style={{
-              display: 'inline-flex',
-              flexDirection: 'column',
-              alignItems: 'flex-start',
-              gap: 'clamp(1.25rem, 2vw, 1.75rem)',
-              padding: 'clamp(2rem, 3.2vw, 2.75rem) clamp(2rem, 3.2vw, 3rem)',
-              borderRadius: '24px',
-              /* Apple-style glass: dark translucent base + top-edge highlight */
-              background: 'linear-gradient(145deg, rgba(22, 20, 18, 0.62) 0%, rgba(10, 9, 8, 0.54) 100%)',
-              backdropFilter: 'blur(40px) saturate(180%) brightness(0.92)',
-              WebkitBackdropFilter: 'blur(40px) saturate(180%) brightness(0.92)',
-              /* Layered borders: bright top edge + subtle full border — Apple vibrancy */
-              border: '1px solid rgba(255, 255, 255, 0.13)',
-              boxShadow: [
-                '0 0 0 0.5px rgba(255,255,255,0.06)',
-                'inset 0 1px 0 rgba(255,255,255,0.14)',
-                'inset 0 -1px 0 rgba(0,0,0,0.30)',
-                '0 8px 64px rgba(0, 0, 0, 0.38)',
-                '0 2px 12px rgba(0, 0, 0, 0.22)',
-              ].join(', '),
-              maxWidth: 'min(620px, 100%)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.75rem',
+              marginBottom: '1.75rem',
             }}
           >
-            {/* Headline */}
-            <h1
+            <span
               style={{
-                fontFamily:
-                  'var(--font-serif-title), "Playfair Display", "Cormorant Garamond", "Didot", "Bodoni MT", Georgia, serif',
-                fontSize: 'clamp(1.85rem, 4.2vw, 3.65rem)',
+                display: 'block',
+                width: '2rem',
+                height: '2px',
+                background: 'var(--color-bronze)',
+                flexShrink: 0,
+              }}
+            />
+            <span
+              style={{
+                color: 'var(--color-bronze)',
+                fontSize: '0.75rem',
+                fontFamily: 'var(--font-inter), sans-serif',
                 fontWeight: 500,
-                lineHeight: 1.13,
-                letterSpacing: '-0.02em',
-                color: '#ffffff',
-                margin: 0,
-                wordBreak: 'break-word',
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
               }}
             >
-              Every trade begins
-              <br />
-              <span className="hero-headline-line2">
-                with the right{' '}
-                {/* "Origin" — capital O, premium bronze with metallic shimmer */}
-                <span className="hero-origin-word">
-                  Origin.
-                </span>
-              </span>
-            </h1>
+              Origin Exims
+            </span>
+          </div>
 
-            {/* Supporting Paragraph */}
-            <p
+          {/* Large headline */}
+          <h1
+            style={{
+              fontFamily: 'var(--font-inter), sans-serif',
+              fontSize: 'clamp(2.6rem, 5.5vw, 5.2rem)',
+              fontWeight: 800,
+              lineHeight: 1.05,
+              letterSpacing: '-0.03em',
+              color: '#ffffff',
+              maxWidth: '820px',
+              margin: '0 0 1.75rem',
+              wordBreak: 'break-word',
+            }}
+          >
+            Your Trusted Exporters of Premium Coir &amp; Agro Commodities
+            <span style={{ color: 'var(--color-bronze)' }}>.</span>
+          </h1>
+
+          {/* Supporting copy */}
+          <p
+            style={{
+              fontSize: 'clamp(0.9rem, 1.1vw, 1.05rem)',
+              fontFamily: 'var(--font-inter), sans-serif',
+              fontWeight: 400,
+              lineHeight: 1.72,
+              color: 'rgba(255,255,255,0.68)',
+              maxWidth: '460px',
+              margin: '0 0 2.5rem',
+            }}
+          >
+            From Tamil Nadu&apos;s farms and coir mills, we connect quality-assured agricultural and coir products to global buyers across 7 key markets worldwide.
+          </p>
+
+          {/* CTA buttons — pill shaped */}
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+            <Link
+              href="/product"
               style={{
-                fontSize: 'clamp(0.9rem, 1.1vw, 1.0625rem)',
-                fontWeight: 400,
-                lineHeight: 1.68,
-                letterSpacing: '-0.005em',
-                color: 'rgba(255, 255, 255, 0.76)',
-                maxWidth: '440px',
-                margin: 0,
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                padding: '0.875rem 2rem',
+                borderRadius: '999px',
+                background: '#ffffff',
+                color: '#000000',
+                fontFamily: 'var(--font-inter), sans-serif',
+                fontWeight: 600,
+                fontSize: '0.9375rem',
+                textDecoration: 'none',
+                whiteSpace: 'nowrap',
               }}
             >
-              Origin Exims is a Coimbatore based merchant export company connecting quality Indian products to global markets.
-            </p>
-
-            {/* CTA — two Apple-style pill buttons side by side */}
-            <div style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: '0.75rem',
-              paddingTop: '0.25rem',
-            }}>
-              <Link href="/product" className="hero-cta-btn hero-cta-primary">
-                <span>View Our Products</span>
-                <span className="cta-arrow" aria-hidden="true">&rarr;</span>
-              </Link>
-              <Link href="/contact" className="hero-cta-btn hero-cta-secondary">
-                <span>Contact Us</span>
-              </Link>
-            </div>
+              Explore Our Products <span aria-hidden="true">↗</span>
+            </Link>
+            <Link
+              href="/contact"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                padding: '0.875rem 2rem',
+                borderRadius: '999px',
+                border: '1px solid rgba(255,255,255,0.40)',
+                color: '#ffffff',
+                fontFamily: 'var(--font-inter), sans-serif',
+                fontWeight: 500,
+                fontSize: '0.9375rem',
+                textDecoration: 'none',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              Contact Us
+            </Link>
           </div>
         </Container>
       </Section>
