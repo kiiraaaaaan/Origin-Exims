@@ -37,8 +37,8 @@ export default function Navbar() {
   const hoverTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pathname = usePathname();
 
-  // All /product/* pages get dark treatment
-  const isDark = pathname === '/' || pathname.startsWith('/product');
+  // Only home page has dark hero background — all other pages are light
+  const isDark = pathname === '/';
 
   // ── Sliding liquid glass pill ───────────────────────────────────────────
   const navRef = useRef<HTMLElement>(null);
