@@ -57,11 +57,11 @@ function ContactRow({ label, value, href }: { label: string; value: string; href
         {label}
       </span>
       {href ? (
-        <a href={href} style={{ fontSize: '0.9375rem', color: 'var(--color-graphite)', textDecoration: 'none', textAlign: 'right' as const, lineHeight: 1.5 }}>
+        <a href={href} style={{ fontSize: '0.9375rem', color: 'var(--color-graphite)', textDecoration: 'none', textAlign: 'right' as const, lineHeight: 1.6, whiteSpace: 'pre-line' as const }}>
           {value}
         </a>
       ) : (
-        <span style={{ fontSize: '0.9375rem', color: 'var(--color-graphite)', textAlign: 'right' as const, lineHeight: 1.5, maxWidth: '60%' }}>
+        <span style={{ fontSize: '0.9375rem', color: 'var(--color-graphite)', textAlign: 'right' as const, lineHeight: 1.6, maxWidth: '60%', whiteSpace: 'pre-line' as const }}>
           {value}
         </span>
       )}
