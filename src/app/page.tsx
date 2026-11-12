@@ -91,7 +91,7 @@ export default function HomePage() {
       <section id="certifications" style={{ scrollMarginTop: 'var(--nav-height)', background: '#ffffff' }}>
         <div style={{ paddingTop: 'clamp(4rem, 8vw, 6rem)', paddingBottom: 'clamp(4rem, 8vw, 6rem)' }}>
           {/* Header */}
-          <Container style={{ marginBottom: 'clamp(2rem, 4vw, 3rem)' }}>
+          <Container style={{ marginBottom: 'clamp(1.5rem, 3vw, 2rem)' }}>
             <h2 style={{ fontFamily: 'var(--font-inter), sans-serif', fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', fontWeight: 800, color: 'var(--color-graphite)', letterSpacing: '-0.03em', lineHeight: 1.08, margin: 0 }}>
               Certifications &amp; Compliance
             </h2>

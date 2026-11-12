@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Container from '@/components/Container';
 
 /* ─── Assets ─────────────────────────────────────────────────────────────── */
 const REGISTRATION_LOGOS = [
@@ -39,24 +38,10 @@ function RegCard({ src, alt }: { src: string; alt: string }) {
   );
 }
 
-function SectionLabel({ children }: { children: React.ReactNode }) {
-  return (
-    <Container style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-      <span style={{ fontSize: '0.72rem', fontWeight: 800, letterSpacing: '0.16em', textTransform: 'uppercase' as const, color: 'var(--color-graphite)', whiteSpace: 'nowrap' }}>
-        {children}
-      </span>
-      <div style={{ flex: 1, height: '1px', background: 'rgba(0,0,0,0.10)' }} />
-    </Container>
-  );
-}
-
 export default function CertMarquees() {
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: MARQUEE_CSS }} />
-
-      {/* ── Label ── */}
-      <SectionLabel>Business &amp; Export Registrations</SectionLabel>
 
       {/* ═══ MARQUEE — Registration Logos ═══ */}
       <div style={{ overflow: 'hidden', width: '100vw', position: 'relative', left: '50%', marginLeft: '-50vw', paddingTop: '0.5rem', paddingBottom: '0.5rem' }}>
