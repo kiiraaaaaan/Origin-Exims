@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Section from '@/components/Section';
 import Container from '@/components/Container';
 import Placeholder from '@/components/Placeholder';
-import CertMarquees from '@/components/CertMarquees';
 import { CATEGORIES, getProductsByCategory } from '@/lib/products';
 
 export default function HomePage() {
@@ -87,9 +86,8 @@ export default function HomePage() {
           3. CERTIFICATIONS — white #FFFFFF, slight contrast from porcelain
       ══════════════════════════════════════════════════════════════ */}
       <section id="certifications" style={{ scrollMarginTop: 'var(--nav-height)', background: '#ffffff' }}>
-        <div style={{ paddingTop: 'clamp(4rem, 8vw, 6rem)', paddingBottom: 'clamp(4rem, 8vw, 6rem)' }}>
-          {/* Header */}
-          <div style={{ width: '90%', maxWidth: '1400px', marginLeft: 'auto', marginRight: 'auto', marginBottom: 'clamp(2.5rem, 5vw, 4rem)' }}>
+        <div style={{ paddingTop: 'clamp(3rem, 6vw, 5rem)', paddingBottom: 'clamp(3rem, 6vw, 5rem)' }}>
+          <div style={{ width: '90%', maxWidth: '1400px', marginLeft: 'auto', marginRight: 'auto' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.9rem' }}>
               <span style={{ display: 'block', width: '1.75rem', height: '1.5px', background: 'var(--color-bronze)' }} />
               <span style={{ fontSize: '0.7rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: 'var(--color-bronze)' }}>Certifications</span>
@@ -97,15 +95,13 @@ export default function HomePage() {
             <h2 style={{ fontFamily: 'var(--font-inter), sans-serif', fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', fontWeight: 800, color: 'var(--color-graphite)', letterSpacing: '-0.03em', lineHeight: 1.08, margin: '0 0 0.75rem' }}>
               Certifications &amp; Compliance
             </h2>
-            <p style={{ fontSize: 'clamp(0.9rem, 1.05vw, 1rem)', lineHeight: 1.7, color: 'rgba(30,30,30,0.55)', margin: '0 0 0.5rem', maxWidth: '500px' }}>
+            <p style={{ fontSize: 'clamp(0.9rem, 1.05vw, 1rem)', lineHeight: 1.7, color: 'rgba(30,30,30,0.55)', margin: '0 0 1rem', maxWidth: '500px' }}>
               Key registrations that enable us to export high-quality coir and agricultural commodities to global markets.
             </p>
-            <Link href="/certifications" style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--color-bronze)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.3rem', marginTop: '0.5rem' }}>
+            <Link href="/certifications" style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--color-bronze)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}>
               View full page ↗
             </Link>
           </div>
-          {/* Live marquees — same component as /certifications */}
-          <CertMarquees />
         </div>
       </section>
 
