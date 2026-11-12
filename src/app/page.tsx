@@ -126,7 +126,7 @@ export default function HomePage() {
                     </Link>
                     <div style={{ padding: '1.75rem' }}>
                       <span className="phase-label">{cat.id === 'coir' ? 'Category 01' : 'Category 02'}</span>
-                      <h3 style={{ fontFamily: 'var(--font-serif-title), serif', fontSize: '1.35rem', fontWeight: 500, color: 'var(--color-graphite)', margin: '0.5rem 0 0.6rem' }}>{cat.name}</h3>
+                      <h3 style={{ fontFamily: 'var(--font-inter), sans-serif', fontSize: '1.35rem', fontWeight: 700, color: 'var(--color-graphite)', margin: '0.5rem 0 0.6rem', letterSpacing: '-0.02em' }}>{cat.name}</h3>
                       <p style={{ fontSize: '0.9rem', lineHeight: 1.65, color: 'rgba(30,30,30,0.58)', margin: '0 0 1.25rem' }}>{cat.intro}</p>
                       <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 1.5rem', display: 'flex', flexDirection: 'column' as const, gap: '0.3rem' }}>
                         {products.map(p => (
