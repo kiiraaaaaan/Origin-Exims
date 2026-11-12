@@ -14,7 +14,7 @@ export default function ProductsPage() {
     <>
       {/* Hero */}
       <Section
-        background="black"
+        background="porcelain"
         style={{
           paddingTop: 'clamp(6rem, 12vw, 9rem)',
           paddingBottom: 'clamp(3rem, 5vw, 4rem)',
@@ -30,7 +30,7 @@ export default function ProductsPage() {
                 fontFamily: 'var(--font-serif-title), "Playfair Display", Georgia, serif',
                 fontSize: 'clamp(2.25rem, 5vw, 3.75rem)',
                 fontWeight: 500,
-                color: '#ffffff',
+                color: 'var(--color-graphite)',
                 letterSpacing: '-0.02em',
                 lineHeight: 1.1,
                 margin: '0.5rem 0 1rem',
@@ -41,7 +41,7 @@ export default function ProductsPage() {
             <p style={{
               fontSize: 'clamp(0.95rem, 1.1vw, 1.0625rem)',
               lineHeight: 1.7,
-              color: 'rgba(255,255,255,0.58)',
+              color: 'rgba(30,30,30,0.58)',
               maxWidth: '520px',
               margin: 0,
             }}>
@@ -52,7 +52,7 @@ export default function ProductsPage() {
       </Section>
 
       {/* Category cards */}
-      <Section background="black" spacing="none" style={{ paddingBottom: 'clamp(4rem, 8vw, 7rem)' }}>
+      <Section background="porcelain" spacing="none" style={{ paddingBottom: 'clamp(4rem, 8vw, 7rem)' }}>
         <Container>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(4rem, 7vw, 6rem)' }}>
             {CATEGORIES.map((cat, i) => {

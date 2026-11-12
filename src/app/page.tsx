@@ -231,15 +231,15 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      {/* 3. Quality & Export Assurance — Dark section with phases */}
-      <Section background="black">
+      {/* 3. Quality & Export Assurance — Light section with phases */}
+      <Section background="porcelain">
         <Container>
           <div style={{
             maxWidth: '640px',
             marginBottom: 'clamp(2.5rem, 5vw, 4rem)',
           }}>
             <span className="text-caption" style={{ color: 'var(--color-bronze)' }}>Our Process</span>
-            <h2 className="text-section-title" style={{ marginTop: '0.5rem', color: '#ffffff' }}>
+            <h2 className="text-section-title" style={{ marginTop: '0.5rem', color: 'var(--color-graphite)' }}>
               Quality &amp; Export Assurance
             </h2>
           </div>

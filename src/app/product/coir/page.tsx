@@ -15,7 +15,7 @@ export default function CoirPage() {
   return (
     <>
       {/* Hero */}
-      <Section background="black" style={{ paddingTop: 'clamp(6rem, 12vw, 9rem)', paddingBottom: 'clamp(2rem, 4vw, 3rem)' }}>
+      <Section background="porcelain" style={{ paddingTop: 'clamp(6rem, 12vw, 9rem)', paddingBottom: 'clamp(2rem, 4vw, 3rem)' }}>
         <Container>
           <div style={{ maxWidth: '600px' }}>
             <Link href="/product" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', color: 'var(--color-bronze)', fontSize: '0.85rem', marginBottom: '1.25rem', textDecoration: 'none' }}>
@@ -28,7 +28,7 @@ export default function CoirPage() {
             <h1 style={{
               fontFamily: 'var(--font-serif-title), "Playfair Display", Georgia, serif',
               fontSize: 'clamp(2rem, 4.5vw, 3.5rem)',
-              fontWeight: 500, color: '#ffffff',
+              fontWeight: 500, color: 'var(--color-graphite)',
               letterSpacing: '-0.02em', lineHeight: 1.12,
               margin: '0.5rem 0 1rem',
             }}>
@@ -36,7 +36,7 @@ export default function CoirPage() {
             </h1>
             <p style={{
               fontSize: 'clamp(0.9rem, 1.05vw, 1rem)',
-              lineHeight: 1.7, color: 'rgba(255,255,255,0.55)',
+              lineHeight: 1.7, color: 'rgba(30,30,30,0.55)',
               maxWidth: '480px', margin: 0,
             }}>
               Natural coconut-based products for horticulture, agriculture, and industrial applications.
@@ -46,7 +46,7 @@ export default function CoirPage() {
       </Section>
 
       {/* Product grid */}
-      <Section background="black" spacing="none" style={{ paddingBottom: 'clamp(4rem, 8vw, 7rem)' }}>
+      <Section background="porcelain" spacing="none" style={{ paddingBottom: 'clamp(4rem, 8vw, 7rem)' }}>
         <Container>
           <div className="product-grid">
             {products.map(product => (
