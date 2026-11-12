@@ -64,7 +64,7 @@ export default function HomePage() {
         <Container>
           <div style={{ maxWidth: '640px', marginBottom: 'clamp(2.5rem, 5vw, 4rem)' }}>
             <span className="text-caption">What We Stand For</span>
-            <h2 className="text-section-title" style={{ marginTop: '0.5rem', color: 'var(--color-graphite)' }}>Our Core Values</h2>
+            <h2 style={{ fontFamily: 'var(--font-inter), sans-serif', fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', fontWeight: 800, letterSpacing: '-0.03em', lineHeight: 1.08, color: 'var(--color-graphite)', margin: '0.5rem 0 0' }}>Our Core Values</h2>
             <p className="text-supporting" style={{ marginTop: '0.75rem' }}>The principles that drive every partnership and shipment at Origin Exims.</p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.75rem' }}>
@@ -114,7 +114,7 @@ export default function HomePage() {
           <Container>
             <div style={{ maxWidth: '640px', marginBottom: 'clamp(2.5rem, 5vw, 4rem)' }}>
               <span className="text-caption" style={{ color: 'var(--color-bronze)' }}>Export Portfolio</span>
-              <h2 style={{ fontFamily: 'var(--font-serif-title), "Playfair Display", Georgia, serif', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 500, color: 'var(--color-graphite)', letterSpacing: '-0.02em', lineHeight: 1.1, margin: '0.5rem 0 1rem' }}>
+              <h2 style={{ fontFamily: 'var(--font-inter), sans-serif', fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', fontWeight: 800, color: 'var(--color-graphite)', letterSpacing: '-0.03em', lineHeight: 1.08, margin: '0.5rem 0 1rem' }}>
                 Our Products
               </h2>
               <p style={{ fontSize: 'clamp(0.95rem, 1.1vw, 1.0625rem)', lineHeight: 1.7, color: 'rgba(30,30,30,0.58)', maxWidth: '520px', margin: 0 }}>
