@@ -61,9 +61,6 @@ function RegCard({ src, alt }: { src: string; alt: string }) {
         border: '1px solid rgba(0,0,0,0.07)',
         borderRadius: '18px',
         boxShadow: '0 2px 16px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
         padding: '1.75rem',
         boxSizing: 'border-box' as const,
       }}
@@ -72,12 +69,11 @@ function RegCard({ src, alt }: { src: string; alt: string }) {
         src={src}
         alt={alt}
         style={{
-          height: '155px',
-          width: 'auto',
-          maxWidth: '270px',
+          width: '100%',
+          height: '100%',
           objectFit: 'contain',
+          objectPosition: 'center center',
           display: 'block',
-          margin: 'auto',
         }}
       />
     </div>
@@ -97,9 +93,6 @@ function DocCard({ src, alt }: { src: string; alt: string }) {
         border: '1px solid rgba(0,0,0,0.07)',
         borderRadius: '18px',
         boxShadow: '0 2px 16px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
         padding: '1.75rem',
         boxSizing: 'border-box' as const,
         overflow: 'hidden',
@@ -109,13 +102,11 @@ function DocCard({ src, alt }: { src: string; alt: string }) {
         src={src}
         alt={alt}
         style={{
-          height: '155px',
-          width: 'auto',
-          maxWidth: '235px',
+          width: '100%',
+          height: '100%',
           objectFit: 'contain',
-          objectPosition: 'center',
+          objectPosition: 'center center',
           display: 'block',
-          margin: 'auto',
         }}
       />
     </div>
