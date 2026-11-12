@@ -81,12 +81,12 @@ export default function HomePage() {
           <h1
             style={{
               fontFamily: 'var(--font-inter), sans-serif',
-              fontSize: 'clamp(2.6rem, 5.5vw, 5.2rem)',
+              fontSize: 'clamp(2rem, 3.4vw, 3.5rem)',
               fontWeight: 800,
               lineHeight: 1.08,
               letterSpacing: '-0.03em',
               color: '#ffffff',
-              maxWidth: '700px',
+              maxWidth: '600px',
               margin: '0 0 1.75rem',
             }}
           >
