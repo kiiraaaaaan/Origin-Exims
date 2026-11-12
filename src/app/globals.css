@@ -354,33 +354,11 @@ button {
 
 /* ── Hero bronze glow pulse — "Coir & Agro" highlight ─────────── */
 @keyframes metallicSweep {
-  0% {
-    background-position: 220% center;
-    filter: drop-shadow(0 0 4px rgba(146, 110, 72, 0.10));
-  }
-  40% {
-    filter: drop-shadow(0 0 18px rgba(178, 143, 109, 0.48))
-            drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
-  }
-  55% {
-    background-position: -20% center;
-    filter: drop-shadow(0 0 26px rgba(178, 143, 109, 0.60))
-            drop-shadow(0 2px 10px rgba(0, 0, 0, 0.40));
-  }
-  100% {
-    background-position: -220% center;
-    filter: drop-shadow(0 0 4px rgba(146, 110, 72, 0.10));
-  }
+  0%   { background-position: 220% center; }
+  100% { background-position: -220% center; }
 }
 
 .hero-bronze-glow {
-  /*
-    Exact logo color DNA:
-      Shadow:    #654527  (darkest logo tone)
-      Midtone:   #8d6d4f  (most common logo pixel)
-      Highlight: #b28f6d  (brightest logo gold)
-    Multi-stop sweep replicates the brushed-metal light play on the actual logo.
-  */
   background: linear-gradient(
     105deg,
     #3d2810 0%,
@@ -388,7 +366,7 @@ button {
     #8d6d4f 22%,
     #a07d5a 32%,
     #b28f6d 42%,
-    #c8a882 50%,     /* soft warm highlight — logo's brightest catchlight */
+    #c8a882 50%,
     #b28f6d 58%,
     #a07d5a 66%,
     #8d6d4f 76%,
@@ -400,6 +378,9 @@ button {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
+  /* Constant warm glow — always on */
+  filter: drop-shadow(0 0 22px rgba(178, 143, 109, 0.55))
+          drop-shadow(0 2px 8px rgba(0, 0, 0, 0.38));
   animation: metallicSweep 5.5s cubic-bezier(0.37, 0, 0.63, 1) infinite;
   display: inline;
 }
