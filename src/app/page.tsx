@@ -1,13 +1,8 @@
 import React from 'react';
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import Section from '@/components/Section';
 import Container from '@/components/Container';
 import Placeholder from '@/components/Placeholder';
-
-const HeroGlobeScene = dynamic(() => import('@/components/HeroGlobeScene'), {
-  ssr: false,
-});
 
 export default function HomePage() {
   return (
@@ -47,9 +42,6 @@ export default function HomePage() {
             background: 'linear-gradient(to right, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.20) 100%)',
           }}
         />
-
-        {/* 3D Globe — stays on the right */}
-        <HeroGlobeScene />
 
         {/* Text content — left-aligned, editorial */}
         <Container style={{ position: 'relative', zIndex: 10, width: '100%' }}>
