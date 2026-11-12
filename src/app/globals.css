@@ -353,23 +353,47 @@ button {
 }
 
 /* ── Hero bronze glow pulse — "Coir & Agro" highlight ─────────── */
-@keyframes bronzeGlowPulse {
-  0%, 100% {
-    text-shadow:
-      0 0 18px rgba(196, 154, 92, 0.45),
-      0 0  6px rgba(196, 154, 92, 0.25);
+@keyframes metallicSweep {
+  0% {
+    background-position: 200% center;
+    filter: drop-shadow(0 0 5px rgba(195, 148, 55, 0.12));
   }
-  50% {
-    text-shadow:
-      0 0 48px rgba(196, 154, 92, 0.85),
-      0 0 20px rgba(196, 154, 92, 0.55),
-      0 0 72px rgba(196, 154, 92, 0.30);
+  45% {
+    filter: drop-shadow(0 0 22px rgba(215, 170, 75, 0.52))
+            drop-shadow(0 2px 6px rgba(0, 0, 0, 0.28));
+  }
+  55% {
+    background-position: -20% center;
+    filter: drop-shadow(0 0 28px rgba(215, 170, 75, 0.58))
+            drop-shadow(0 2px 8px rgba(0, 0, 0, 0.32));
+  }
+  100% {
+    background-position: -200% center;
+    filter: drop-shadow(0 0 5px rgba(195, 148, 55, 0.12));
   }
 }
 
 .hero-bronze-glow {
-  color: #C49A5C;
-  animation: bronzeGlowPulse 3s ease-in-out infinite;
+  /* Matte metallic antique gold — dark → warm → soft highlight → back */
+  background: linear-gradient(
+    105deg,
+    #4e3010 0%,
+    #8c6425 12%,
+    #b88c3a 24%,
+    #d4a848 34%,
+    #e8c870 44%,
+    #d4a848 54%,
+    #b88c3a 64%,
+    #8c6425 76%,
+    #c49a50 88%,
+    #4e3010 100%
+  );
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: metallicSweep 5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
   display: inline;
 }
 
