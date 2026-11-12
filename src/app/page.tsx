@@ -16,7 +16,7 @@ export default function HomePage() {
           minHeight: '100vh',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'flex-end',
+          justifyContent: 'center',
           overflow: 'hidden',
           paddingTop: 'var(--nav-height)',
           paddingBottom: 'clamp(4rem, 8vw, 6rem)',
@@ -28,24 +28,24 @@ export default function HomePage() {
             position: 'absolute',
             inset: 0,
             zIndex: 0,
-            backgroundImage: 'url(/images/coir-fibre.jpg)',
+            backgroundImage: 'url(/images/agri-chilli.jpg)',
             backgroundSize: 'cover',
-            backgroundPosition: 'center 60%',
+            backgroundPosition: 'center center',
           }}
         />
-        {/* Dark overlay for text legibility */}
+        {/* Dark overlay — heavy on left for text, fades to natural on right */}
         <div
           style={{
             position: 'absolute',
             inset: 0,
             zIndex: 1,
-            background: 'linear-gradient(to right, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.20) 100%)',
+            background: 'linear-gradient(to right, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.65) 45%, rgba(0,0,0,0.25) 100%)',
           }}
         />
 
-        {/* Text content — left-aligned, editorial */}
+        {/* Text content — left-aligned, vertically centered */}
         <Container style={{ position: 'relative', zIndex: 10, width: '100%' }}>
-          {/* Top badge: orange dash + label */}
+          {/* Top badge: bronze dash + label */}
           <div
             style={{
               display: 'flex',
@@ -69,7 +69,7 @@ export default function HomePage() {
                 fontSize: '0.75rem',
                 fontFamily: 'var(--font-inter), sans-serif',
                 fontWeight: 500,
-                letterSpacing: '0.1em',
+                letterSpacing: '0.12em',
                 textTransform: 'uppercase',
               }}
             >
@@ -77,33 +77,41 @@ export default function HomePage() {
             </span>
           </div>
 
-          {/* Large headline */}
+          {/* Large headline — white + bronze highlighted line */}
           <h1
             style={{
               fontFamily: 'var(--font-inter), sans-serif',
               fontSize: 'clamp(2.6rem, 5.5vw, 5.2rem)',
               fontWeight: 800,
-              lineHeight: 1.05,
+              lineHeight: 1.08,
               letterSpacing: '-0.03em',
               color: '#ffffff',
-              maxWidth: '820px',
+              maxWidth: '760px',
               margin: '0 0 1.75rem',
               wordBreak: 'break-word',
             }}
           >
-            Your Trusted Exporters of Premium Coir &amp; Agro Commodities
-            <span style={{ color: 'var(--color-bronze)' }}>.</span>
+            Your Trusted<br />
+            Exporters of Premium<br />
+            <span
+              style={{
+                color: 'var(--color-bronze)',
+                textShadow: '0 0 40px rgba(180,130,60,0.45), 0 0 80px rgba(180,130,60,0.20)',
+              }}
+            >
+              Coir &amp; Agro Commodities.
+            </span>
           </h1>
 
           {/* Supporting copy */}
           <p
             style={{
-              fontSize: 'clamp(0.9rem, 1.1vw, 1.05rem)',
+              fontSize: 'clamp(0.875rem, 1.05vw, 1rem)',
               fontFamily: 'var(--font-inter), sans-serif',
               fontWeight: 400,
               lineHeight: 1.72,
-              color: 'rgba(255,255,255,0.68)',
-              maxWidth: '460px',
+              color: 'rgba(255,255,255,0.65)',
+              maxWidth: '420px',
               margin: '0 0 2.5rem',
             }}
           >
@@ -121,7 +129,7 @@ export default function HomePage() {
                 padding: '0.875rem 2rem',
                 borderRadius: '999px',
                 background: '#ffffff',
-                color: '#000000',
+                color: '#111111',
                 fontFamily: 'var(--font-inter), sans-serif',
                 fontWeight: 600,
                 fontSize: '0.9375rem',
@@ -138,7 +146,8 @@ export default function HomePage() {
                 alignItems: 'center',
                 padding: '0.875rem 2rem',
                 borderRadius: '999px',
-                border: '1px solid rgba(255,255,255,0.40)',
+                background: 'rgba(20,16,10,0.85)',
+                border: '1px solid rgba(255,255,255,0.18)',
                 color: '#ffffff',
                 fontFamily: 'var(--font-inter), sans-serif',
                 fontWeight: 500,
