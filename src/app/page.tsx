@@ -107,7 +107,7 @@ export default function HomePage() {
               margin: '0 0 2.5rem',
             }}
           >
-            From Tamil Nadu&apos;s farms and coir mills, we connect quality-assured agricultural and coir products to global buyers across 7 key markets worldwide.
+            From India&apos;s farms and coir mills, we connect quality assured agricultural and coir commodities to global buyers worldwide.
           </p>
 
           {/* CTA buttons — pill shaped */}
