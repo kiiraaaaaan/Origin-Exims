@@ -22,28 +22,28 @@ export default function HomePage() {
           paddingBottom: 'clamp(4rem, 8vw, 6rem)',
         }}
       >
-        {/* Full-bleed product background image */}
+        {/* Full-bleed product background image — unchanged */}
         <div
           style={{
             position: 'absolute',
             inset: 0,
             zIndex: 0,
-            backgroundImage: 'url(/images/agri-chilli.jpg)',
+            backgroundImage: 'url(/images/coir-fibre.jpg)',
             backgroundSize: 'cover',
-            backgroundPosition: 'center center',
+            backgroundPosition: 'center 60%',
           }}
         />
-        {/* Dark overlay — heavy on left for text, fades to natural on right */}
+        {/* Dark overlay for text legibility */}
         <div
           style={{
             position: 'absolute',
             inset: 0,
             zIndex: 1,
-            background: 'linear-gradient(to right, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.65) 45%, rgba(0,0,0,0.25) 100%)',
+            background: 'linear-gradient(to right, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.20) 100%)',
           }}
         />
 
-        {/* Text content — left-aligned, vertically centered */}
+        {/* Text content — left-aligned, editorial */}
         <Container style={{ position: 'relative', zIndex: 10, width: '100%' }}>
           {/* Top badge: bronze dash + label */}
           <div
@@ -69,7 +69,7 @@ export default function HomePage() {
                 fontSize: '0.75rem',
                 fontFamily: 'var(--font-inter), sans-serif',
                 fontWeight: 500,
-                letterSpacing: '0.12em',
+                letterSpacing: '0.1em',
                 textTransform: 'uppercase',
               }}
             >
@@ -77,7 +77,7 @@ export default function HomePage() {
             </span>
           </div>
 
-          {/* Large headline — white + bronze highlighted line */}
+          {/* Large headline — 3 lines matching reference */}
           <h1
             style={{
               fontFamily: 'var(--font-inter), sans-serif',
@@ -86,17 +86,18 @@ export default function HomePage() {
               lineHeight: 1.08,
               letterSpacing: '-0.03em',
               color: '#ffffff',
-              maxWidth: '760px',
+              maxWidth: '700px',
               margin: '0 0 1.75rem',
-              wordBreak: 'break-word',
             }}
           >
-            Your Trusted<br />
-            Exporters of Premium<br />
+            Your Trusted
+            <br />
+            Exporters of Premium
+            <br />
             <span
               style={{
                 color: 'var(--color-bronze)',
-                textShadow: '0 0 40px rgba(180,130,60,0.45), 0 0 80px rgba(180,130,60,0.20)',
+                textShadow: '0 0 32px rgba(180,130,60,0.55), 0 0 8px rgba(180,130,60,0.30)',
               }}
             >
               Coir &amp; Agro Commodities.
@@ -106,12 +107,12 @@ export default function HomePage() {
           {/* Supporting copy */}
           <p
             style={{
-              fontSize: 'clamp(0.875rem, 1.05vw, 1rem)',
+              fontSize: 'clamp(0.9rem, 1.1vw, 1.05rem)',
               fontFamily: 'var(--font-inter), sans-serif',
               fontWeight: 400,
               lineHeight: 1.72,
-              color: 'rgba(255,255,255,0.65)',
-              maxWidth: '420px',
+              color: 'rgba(255,255,255,0.68)',
+              maxWidth: '460px',
               margin: '0 0 2.5rem',
             }}
           >
@@ -129,7 +130,7 @@ export default function HomePage() {
                 padding: '0.875rem 2rem',
                 borderRadius: '999px',
                 background: '#ffffff',
-                color: '#111111',
+                color: '#000000',
                 fontFamily: 'var(--font-inter), sans-serif',
                 fontWeight: 600,
                 fontSize: '0.9375rem',
@@ -146,8 +147,7 @@ export default function HomePage() {
                 alignItems: 'center',
                 padding: '0.875rem 2rem',
                 borderRadius: '999px',
-                background: 'rgba(20,16,10,0.85)',
-                border: '1px solid rgba(255,255,255,0.18)',
+                border: '1px solid rgba(255,255,255,0.40)',
                 color: '#ffffff',
                 fontFamily: 'var(--font-inter), sans-serif',
                 fontWeight: 500,
