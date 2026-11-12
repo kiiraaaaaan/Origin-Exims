@@ -58,7 +58,8 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════════════════════════
           2. CORE VALUES — porcelain #F5F5F0
       ══════════════════════════════════════════════════════════════ */}
-      <Section background="porcelain">
+      <section style={{ background: '#F7F5F2' }}>
+        <div style={{ padding: 'clamp(4rem,8vw,6rem) 0' }}>
         <Container>
           <div style={{ maxWidth: '640px', marginBottom: 'clamp(2.5rem, 5vw, 4rem)' }}>
             <span className="text-caption">What We Stand For</span>
@@ -81,7 +82,8 @@ export default function HomePage() {
             ))}
           </div>
         </Container>
-      </Section>
+        </div>
+      </section>
 
       {/* ══════════════════════════════════════════════════════════════
           3. CERTIFICATIONS — white #FFFFFF, slight contrast from porcelain
@@ -158,7 +160,7 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════════════════════════
           5. CONTACT — porcelain #F5F5F0 (back to base, clear separation)
       ══════════════════════════════════════════════════════════════ */}
-      <section id="contact" style={{ scrollMarginTop: 'var(--nav-height)', background: 'var(--color-porcelain)' }}>
+      <section id="contact" style={{ scrollMarginTop: 'var(--nav-height)', background: '#ffffff' }}>
         <div style={{ paddingTop: 'clamp(4rem, 8vw, 6rem)', paddingBottom: 'clamp(5rem, 10vw, 8rem)' }}>
           <Container>
             <div style={{ maxWidth: '720px', marginBottom: 'clamp(3rem, 6vw, 5rem)' }}>
