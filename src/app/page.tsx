@@ -39,7 +39,7 @@ export default function HomePage() {
             position: 'absolute',
             inset: 0,
             zIndex: 1,
-            background: 'linear-gradient(to right, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.20) 100%)',
+            background: 'linear-gradient(to right, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.72) 45%, rgba(0,0,0,0.25) 100%)',
           }}
         />
 
